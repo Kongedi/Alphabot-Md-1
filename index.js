@@ -2543,16 +2543,11 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             if (db.data.settings[botNumber].userRegister && !db.data.users[m.sender].registered) return alpha.send2ButMes(m.chat, `🇮🇩 _Hi @${m.sender.split('@')[0]} silahkan verifikasi terlebih dahulu sebelum memakai fitur bot_${enter}${enter}🇺🇸 _Hi @${m.sender.split('@')[0]} please verify first before using the bot feature_`, `© ${ownername}`, `.daftar ` + pushname, `🇺🇸 Verify`, `.daftar ` + pushname, 'Daftar 🇮🇩', fkontak, [m.sender])
             if (!isPremium && db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Nolimit(prefix), `© ${ownername}`, `.daily`, `👉 Daily`, `.weekly`, `Weekly 👈`, m)
             reply(lang.wait())
-            axios.get(`https://api.waifu.pics/sfw/${command}`)
+            axios.get(`https://api.waifu.pics/sfw/waifu`)
                .then(({
                   data
                }) => {
-                  alpha.sendMediaAsSticker(m.chat, data.url, m, {
-                     packname: global.packname,
-                     author: global.author
-                  })
-
-
+                  alpha.sendImage(m.chat, data.url, lang.ok(), m)
                })
             db.data.users[m.sender].limit = addLimit
          }
