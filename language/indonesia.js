@@ -1844,7 +1844,7 @@ exports.tos = (ownernomer) => {
 *-------「 DONATE 」 -------*
 
 Hai kak ☺️ 
-Kalian bisa mendukung saya agar bot ini tetap up to date dengan cara donasi
+Kalian bisa mendukung saya agar bot ini tetap up to date dengan cara donasi (CREDIT)
 
 Berapapun donasi kalian akan sangat berarti 👍
 Thanks!
